@@ -1,7 +1,7 @@
 /*******************************************************************************
  * CpE 3202 - Computer Organization and Architecture
  * Laboratory Exercise #1: The Arithmetic and Logic Unit (ALU)
- *
+ *cc 
  * Description: 8-bit ALU implementation in C that performs arithmetic and
  *              logic operations based on control signals from the control unit.
  ******************************************************************************/
