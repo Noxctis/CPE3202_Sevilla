@@ -1,3 +1,10 @@
+/*
+Arnold Joseph C. Najera
+Cris Villem P. Saniel
+Korinne Margaret V. Sasil
+Chrys Sean T. Sevilla
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
