@@ -1,0 +1,26 @@
+; CountDown.txt
+; A decade down-counter that outputs to the 7-segment display at I/O latch 0x000
+
+0x000 WB 0x09      ; MBR = 9 
+0x002 WM 0x400     ; Store 9 in Data Memory at 0x400 
+
+; --- LOOP START (Address 0x004) ---
+0x004 RM 0x400     ; MBR = Data Memory[0x400] (Load current counter)
+0x006 SWAP         ; IOBR = MBR (Move counter to IOBR for output)
+0x008 WIO 0x000    ; Write IOBR to Latch 0x000 (Triggers 7-segment display)
+
+0x00A RM 0x400     ; MBR = Data Memory[0x400]
+0x00C WACC         ; ACC = MBR (Load counter into Accumulator)
+0x00E WB 0x00      ; MBR = 0
+0x010 BRE 0x020    ; Compare ACC to MBR (0). If ACC == 0, jump to END (0x020)
+
+0x012 RM 0x400     ; MBR = Data Memory[0x400]
+0x014 WACC         ; ACC = MBR
+0x016 WB 0x01      ; MBR = 1
+0x018 SUB          ; ACC = ACC - MBR (Subtract 1 from counter)
+0x01A RACC         ; MBR = ACC (Read new counter value)
+0x01C WM 0x400     ; Store new counter value back into Data Memory[0x400]
+0x01E BR 0x004     ; Unconditional Branch back to LOOP START
+
+; --- END (Address 0x020) ---
+0x020 EOP          ; End of Program

@@ -363,6 +363,12 @@ int CU(void) {
         }
 
         /* Echo the state of the registers and buses */
-        printf("PC: 0x%03X | IR: 0x%04X | MAR: 0x%03X | MBR: 0x%02X | BUS: 0x%02X\n", PC, IR, MAR, MBR, BUS);
+        printf("--- Register & Bus States ---\n");
+        printf("PC      : 0x%03X | IR      : 0x%04X\n", PC, IR);
+        printf("MAR     : 0x%03X | MBR     : 0x%02X\n", MAR, MBR);
+        printf("IOAR    : 0x%03X | IOBR    : 0x%02X\n", IOAR, IOBR);
+        printf("ADDR Bus: 0x%03X | DATA Bus: 0x%02X\n", ADDR, BUS);
+        printf("CONTROL : 0x%02X  | FLAGS   : 0x%02X\n", CONTROL, FLAGS);
+        printf("----------------------------\n");
     }
 }
