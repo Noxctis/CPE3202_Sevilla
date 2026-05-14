@@ -1,3 +1,14 @@
+/*
+Arnold Joseph C. Najera
+Cris Villem P. Saniel
+Korinne Margaret V. Sasil
+Chrys Sean T. Sevilla
+*/
+
+/*
+.\assembler.exe CountDown.txt machine_code.txt
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
